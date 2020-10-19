@@ -1,6 +1,6 @@
 {
   "name": "chuck-norris-joke-module",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "A sample Angular module used to demo an example of how to build and consume a module to be shared among many Angular applications.",
   "author": {
     "name": "Corey Prater",
