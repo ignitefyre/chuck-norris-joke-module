@@ -1,0 +1,70 @@
+.joke {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    margin-top: 100px;
+    height: 300px;
+
+    &-header {
+        height: 40px;
+        background-color: #0353A4;
+        color: white;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 100px;
+    }
+
+    &-actions {
+        display: flex;
+        align-items: center;
+        background-color: #979dac;
+
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+
+        button {
+            background-color: #001845; /* Green */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 8px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+
+            &:focus {
+                border: none;
+            }
+        }
+    }
+
+    &-loader {
+        border: 4px solid #0353A4; /* Light grey */
+        border-top: 4px solid #001845; /* Blue */
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

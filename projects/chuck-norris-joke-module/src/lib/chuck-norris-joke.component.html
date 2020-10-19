@@ -1,3 +1,12 @@
-{{joke}}
-<hr>
-<button (click)="getAnotherJoke()">Get Joke</button>
+<div class="joke">
+    <div class="joke-header">
+        Random Chuck Norris One-liners
+    </div>
+    <div class="joke-wrapper">
+        {{joke}}
+    </div>
+    <div class="joke-actions">
+        <button (click)="getAnotherJoke()">Get Joke</button>
+        <div *ngIf="isLoading | async" class="joke-loader"></div>
+    </div>
+</div>

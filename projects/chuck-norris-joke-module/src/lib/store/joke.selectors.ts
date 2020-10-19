@@ -12,3 +12,8 @@ export const selectJokeStateData = createSelector(
     getJokeState,
     (state) => state.joke
 );
+
+export const selectJokeStateIsLoading = createSelector(
+    getJokeState,
+    (state) => state.isLoading
+);
