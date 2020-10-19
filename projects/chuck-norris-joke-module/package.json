@@ -1,0 +1,13 @@
+{
+  "name": "chuck-norris-joke-module",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^10.1.6",
+    "@angular/core": "^10.1.6",
+    "@ngrx/effects": "^10.0.1",
+    "@ngrx/store": "^10.0.1"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

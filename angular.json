@@ -1,0 +1,171 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "chuck-norris-joke-module": {
+      "projectType": "library",
+      "root": "projects/chuck-norris-joke-module",
+      "sourceRoot": "projects/chuck-norris-joke-module/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/chuck-norris-joke-module/tsconfig.lib.json",
+            "project": "projects/chuck-norris-joke-module/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/chuck-norris-joke-module/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/chuck-norris-joke-module/src/test.ts",
+            "tsConfig": "projects/chuck-norris-joke-module/tsconfig.spec.json",
+            "karmaConfig": "projects/chuck-norris-joke-module/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/chuck-norris-joke-module/tsconfig.lib.json",
+              "projects/chuck-norris-joke-module/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "chuck-norris-joke-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/chuck-norris-joke-app",
+      "sourceRoot": "projects/chuck-norris-joke-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/chuck-norris-joke-app",
+            "index": "projects/chuck-norris-joke-app/src/index.html",
+            "main": "projects/chuck-norris-joke-app/src/main.ts",
+            "polyfills": "projects/chuck-norris-joke-app/src/polyfills.ts",
+            "tsConfig": "projects/chuck-norris-joke-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/chuck-norris-joke-app/src/favicon.ico",
+              "projects/chuck-norris-joke-app/src/assets"
+            ],
+            "styles": [
+              "projects/chuck-norris-joke-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/chuck-norris-joke-app/src/environments/environment.ts",
+                  "with": "projects/chuck-norris-joke-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "chuck-norris-joke-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "chuck-norris-joke-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "chuck-norris-joke-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/chuck-norris-joke-app/src/test.ts",
+            "polyfills": "projects/chuck-norris-joke-app/src/polyfills.ts",
+            "tsConfig": "projects/chuck-norris-joke-app/tsconfig.spec.json",
+            "karmaConfig": "projects/chuck-norris-joke-app/karma.conf.js",
+            "assets": [
+              "projects/chuck-norris-joke-app/src/favicon.ico",
+              "projects/chuck-norris-joke-app/src/assets"
+            ],
+            "styles": [
+              "projects/chuck-norris-joke-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/chuck-norris-joke-app/tsconfig.app.json",
+              "projects/chuck-norris-joke-app/tsconfig.spec.json",
+              "projects/chuck-norris-joke-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/chuck-norris-joke-app/e2e/protractor.conf.js",
+            "devServerTarget": "chuck-norris-joke-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "chuck-norris-joke-app:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": false
+  },
+  "defaultProject": "chuck-norris-joke-module"
+}
