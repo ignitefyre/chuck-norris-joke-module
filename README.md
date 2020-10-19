@@ -5,7 +5,7 @@ This project was built as an example of how an Angular module can be built for r
 
 ## Angular App Module
 ```
-i...
+...
 
 import { ChuckNorrisJokeModule } from 'projects/chuck-norris-joke-module/src/public-api';
 
