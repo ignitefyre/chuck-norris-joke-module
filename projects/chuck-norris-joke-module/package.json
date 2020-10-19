@@ -1,6 +1,19 @@
 {
   "name": "chuck-norris-joke-module",
   "version": "0.0.2",
+  "description": "A sample Angular module used to demo an example of how to build and consume a module to be shared among many Angular applications.",
+  "author": {
+    "name": "Corey Prater",
+    "email": "cprater02@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/ignitefyre/chuck-norris-joke-module.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/ignitefyre/chuck-norris-joke-module",
+  "bugs": {
+    "url": "https://github.com/ignitefyre/chuck-norris-joke-module/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^10.1.6",
     "@angular/core": "^10.1.6",
