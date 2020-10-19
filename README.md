@@ -9,7 +9,7 @@ Run `npm i chuck-norris-joke-module`
 ```
 ...
 
-import { ChuckNorrisJokeModule } from 'projects/chuck-norris-joke-module/src/public-api';
+import { ChuckNorrisJokeModule } from 'chuck-norris-joke-module';
 
 @NgModule({
   declarations: [
