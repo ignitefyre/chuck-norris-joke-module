@@ -13,7 +13,7 @@ import { selectJokeStateData, selectJokeStateIsLoading } from './store/joke.sele
 })
 export class ChuckNorrisJokeComponent implements OnInit {
 
-  joke: Joke;
+  joke: string;
   isLoading: Observable<boolean>;
 
   constructor(private store: Store<JokeState>) { }
@@ -25,7 +25,9 @@ export class ChuckNorrisJokeComponent implements OnInit {
       select(selectJokeStateData)
     ).subscribe({
       next: response => {
-        this.joke = response;
+        if (response) {
+          this.joke = response.joke;
+        }
       }
     });
 

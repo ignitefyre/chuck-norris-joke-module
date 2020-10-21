@@ -13,6 +13,6 @@ export class ApiService {
   constructor(private readonly http: HttpClient) { }
 
   getRandomJoke(): Observable<JokeResponse> {
-    return this.http.get<JokeResponse>('https://api.chucknorris.io/jokes/random').pipe(delay(1000));
+    return this.http.get<JokeResponse>('http://api.icndb.com/jokes/random').pipe(delay(1000));
   }
 }

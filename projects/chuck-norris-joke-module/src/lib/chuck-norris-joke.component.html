@@ -1,12 +1,16 @@
-<div class="joke">
-    <div class="joke-header">
-        Random Chuck Norris One-liners
-    </div>
-    <div class="joke-wrapper">
-        {{joke}}
-    </div>
-    <div class="joke-actions">
-        <button (click)="getAnotherJoke()">Get Joke</button>
-        <div *ngIf="isLoading | async" class="joke-loader"></div>
+<div class="container">
+    <div class="joke">
+        <div class="joke-header">
+            Random Chuck Norris Jokes
+        </div>
+        <div class="joke-wrapper">
+            {{joke}}
+        </div>
+        <div class="joke-actions">
+            <button (click)="getAnotherJoke()">Get Joke</button>
+            <div *ngIf="isLoading | async" class="joke-loader"></div>
+        </div>
     </div>
 </div>
+
+
