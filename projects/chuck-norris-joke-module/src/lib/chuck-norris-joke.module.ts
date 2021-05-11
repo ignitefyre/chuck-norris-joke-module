@@ -14,9 +14,7 @@ import { AppEffects, AppReducers } from './store';
     HttpClientModule,
     StoreModule.forRoot({ }),
     StoreModule.forFeature('POC_JOKE_STATE_KEY', AppReducers.jokeReducer),
-    EffectsModule.forRoot([
-      AppEffects.JokeEffects
-    ]),
+    EffectsModule.forFeature([AppEffects.JokeEffects])
   ],
   exports: [ChuckNorrisJokeComponent]
 })
